@@ -1,5 +1,4 @@
-from random import randrange
-import string
+from random import randrange, shuffle, sample
 
 class BoggleBoard:
   
@@ -26,6 +25,8 @@ class BoggleBoard:
             grid.append('Qu')
           else:
             grid.append(alphabet[j][rolls[i]]+' ')
+
+    grid = sample(grid, len(grid))
 
     self.board = f"""
     {grid[0]} {grid[1]} {grid[2]} {grid[3]}
